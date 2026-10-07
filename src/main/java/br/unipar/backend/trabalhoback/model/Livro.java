@@ -1,13 +1,26 @@
 package br.unipar.backend.trabalhoback.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Livro {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String titulo;
     private String autor;
     private String genero;
-    private int ano;
+    private Integer ano;
 
-    public Livro(int id, String titulo, String autor, String genero, int ano) {
+    public Livro() {
+    }
+
+    public Livro(Integer id, String titulo, String autor, String genero, Integer ano) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -15,11 +28,11 @@ public class Livro {
         this.ano = ano;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -47,13 +60,11 @@ public class Livro {
         this.genero = genero;
     }
 
-    public int getAno() {
+    public Integer getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
 }
-
-
